@@ -1,0 +1,14 @@
+C:\Users\jpls\source\repos\Padroes de Projeto\Padroes de Projeto\bin\Debug\netcoreapp3.1\Padroes de Projeto.exe
+C:\Users\jpls\source\repos\Padroes de Projeto\Padroes de Projeto\bin\Debug\netcoreapp3.1\Padroes de Projeto.deps.json
+C:\Users\jpls\source\repos\Padroes de Projeto\Padroes de Projeto\bin\Debug\netcoreapp3.1\Padroes de Projeto.runtimeconfig.json
+C:\Users\jpls\source\repos\Padroes de Projeto\Padroes de Projeto\bin\Debug\netcoreapp3.1\Padroes de Projeto.runtimeconfig.dev.json
+C:\Users\jpls\source\repos\Padroes de Projeto\Padroes de Projeto\bin\Debug\netcoreapp3.1\Padroes de Projeto.dll
+C:\Users\jpls\source\repos\Padroes de Projeto\Padroes de Projeto\bin\Debug\netcoreapp3.1\Padroes de Projeto.pdb
+C:\Users\jpls\source\repos\Padroes de Projeto\Padroes de Projeto\obj\Debug\netcoreapp3.1\Padroes de Projeto.csproj.AssemblyReference.cache
+C:\Users\jpls\source\repos\Padroes de Projeto\Padroes de Projeto\obj\Debug\netcoreapp3.1\Padroes de Projeto.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jpls\source\repos\Padroes de Projeto\Padroes de Projeto\obj\Debug\netcoreapp3.1\Padroes de Projeto.AssemblyInfoInputs.cache
+C:\Users\jpls\source\repos\Padroes de Projeto\Padroes de Projeto\obj\Debug\netcoreapp3.1\Padroes de Projeto.AssemblyInfo.cs
+C:\Users\jpls\source\repos\Padroes de Projeto\Padroes de Projeto\obj\Debug\netcoreapp3.1\Padroes de Projeto.csproj.CoreCompileInputs.cache
+C:\Users\jpls\source\repos\Padroes de Projeto\Padroes de Projeto\obj\Debug\netcoreapp3.1\Padroes de Projeto.dll
+C:\Users\jpls\source\repos\Padroes de Projeto\Padroes de Projeto\obj\Debug\netcoreapp3.1\Padroes de Projeto.pdb
+C:\Users\jpls\source\repos\Padroes de Projeto\Padroes de Projeto\obj\Debug\netcoreapp3.1\Padroes de Projeto.genruntimeconfig.cache
