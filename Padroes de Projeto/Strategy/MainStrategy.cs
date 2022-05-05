@@ -1,14 +1,12 @@
-﻿using Padroes_de_Projeto.Strategy;
-using System;
+﻿using System;
 
-namespace Padroes_de_Projeto
+namespace Padroes_de_Projeto.Strategy
 {
-    public class Program
+    public class MainStrategy
     {
-        static void Main(string[] args)
+        public MainStrategy()
         {
-            Console.WriteLine("Hello World!");
-
+            Console.WriteLine("Strategy");
 
             Imposto iss = new ISS();
             Imposto icms = new ICMS();
@@ -19,7 +17,7 @@ namespace Padroes_de_Projeto
 
             calculador.RealizaCalculo(orcamento, icms);
             calculador.RealizaCalculo(orcamento, iss);
-
+            Console.WriteLine("FIM");
         }
 
     }
