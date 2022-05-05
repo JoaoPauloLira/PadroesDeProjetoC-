@@ -1,5 +1,6 @@
 ﻿using Padroes_de_Projeto.ChainOfResponsibility;
 using Padroes_de_Projeto.Strategy;
+using Padroes_de_Projeto.TemplateMethod;
 using System;
 
 namespace Padroes_de_Projeto
@@ -17,6 +18,13 @@ namespace Padroes_de_Projeto
             #region ClainOfResponsibility
             var clainOfResponsibility = new MainChainOfResponsibility();
             #endregion
+
+            Divisor();
+
+            #region TemplateMethod
+            var templateMethod = new MainTemplateMethod();
+            #endregion
+
 
 
         }
