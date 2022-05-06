@@ -1,14 +1,15 @@
-﻿using System;
+﻿using Padroes_de_Projeto.SimUDuck.Interfaces;
+using System;
 
 namespace Padroes_de_Projeto.SimUDuck
 {
     public abstract class Duck
     {
-        //Grosnar
-        public virtual void Quack()
-        {
-            Console.WriteLine("quack: Grosnar");
-        }
+        protected IFlyBehavior _flyBehavior;
+        protected IQuackBehavior _quackBehavior;
+
+        public abstract void Display();
+
 
         //Nadar 
         public void Swim()
@@ -16,13 +17,41 @@ namespace Padroes_de_Projeto.SimUDuck
             Console.WriteLine("swin: Nadar");
         }
 
-        //Voar
-        public virtual void Fly()
+        public void PerformQuack()
         {
-            Console.WriteLine("fly: Voar");
+            _quackBehavior.quack();
         }
 
-        public abstract void Display();
+        public void PerformFly()
+        {
+            _flyBehavior.Fly();
+        }
+
+        public void SetFlyBehavior(IFlyBehavior flyBehavior)
+        {
+            _flyBehavior = flyBehavior;
+        }
+
+        public void SetQuackBehavior(IQuackBehavior quackBehavior)
+        {
+            _quackBehavior = quackBehavior;
+        }
+
+        //Saio daquei e foi para as classes de comportamento que implementa a IQuackBehavior
+        ////Grosnar
+        //public virtual void Quack()
+        //{
+        //    Console.WriteLine("quack: Grosnar");
+        //}
+
+        //Saio daquei e foi para as classes de comportamento que implementa a IFlyBehavior
+        ////Voar
+        //public virtual void Fly()
+        //{
+        //    Console.WriteLine("fly: Voar");
+        //}
+
+
 
     }
 }

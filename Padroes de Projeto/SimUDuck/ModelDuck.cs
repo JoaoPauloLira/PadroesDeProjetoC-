@@ -3,18 +3,17 @@ using System;
 
 namespace Padroes_de_Projeto.SimUDuck
 {
-    //Pato-real
-    public class MallardDuck : Duck
+    public class ModelDuck : Duck
     {
-        public MallardDuck()
+        public ModelDuck()
         {
+            _flyBehavior = new FlyNoWay();
             _quackBehavior = new Quack();
-            _flyBehavior = new FlyWithWings();
-        }
-        public override void Display()
-        {
-            Console.WriteLine("Display: MallardDuck");
         }
 
+        public override void Display()
+        {
+            Console.WriteLine("Display: ModelDuck");
+        }
     }
 }

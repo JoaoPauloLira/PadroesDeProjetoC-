@@ -9,5 +9,6 @@ namespace Padroes_de_Projeto.SimUDuck
         {
             Console.WriteLine("Display: RedheadDuck");
         }
+
     }
 }

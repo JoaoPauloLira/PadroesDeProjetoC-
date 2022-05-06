@@ -1,5 +1,6 @@
 ﻿using Padroes_de_Projeto.ChainOfResponsibility;
 using Padroes_de_Projeto.SimUDuck;
+using Padroes_de_Projeto.SimUDuck.Comportamentos;
 using Padroes_de_Projeto.Strategy;
 using Padroes_de_Projeto.TemplateMethod;
 using System;
@@ -50,30 +51,41 @@ namespace Padroes_de_Projeto
 
             patoBravo.Display();
             patoBravo.Swim();
-            patoBravo.Fly();
-            patoBravo.Quack();
+            //patoBravo.Fly();
+            //patoBravo.Quack();
+            patoBravo.PerformFly();
+            patoBravo.PerformQuack();
+
 
             Divisor();
 
             redhead.Display();
             redhead.Swim();
-            redhead.Fly();
-            redhead.Quack();
+            //redhead.Fly();
+            //redhead.Quack();
 
             Divisor();
 
             rubber.Display();
             rubber.Swim();
-            rubber.Fly();
-            rubber.Quack();
+            //rubber.Fly();
+            //rubber.Quack();
 
             Divisor();
 
             decoy.Display();
             decoy.Swim();
-            decoy.Fly();
-            decoy.Quack();
+            //decoy.Fly();
+            //decoy.Quack();
 
+            Divisor();
+
+            Duck modeloDuck = new ModelDuck();
+
+            modeloDuck.Display();
+            modeloDuck.PerformFly();
+            modeloDuck.SetFlyBehavior(new FlyRocketPowered());
+            modeloDuck.PerformFly();
 
         }
     }
