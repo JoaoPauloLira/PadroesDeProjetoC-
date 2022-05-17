@@ -1,4 +1,6 @@
 ﻿using Padroes_de_Projeto.ChainOfResponsibility;
+using Padroes_de_Projeto.RPG_Strategy;
+using Padroes_de_Projeto.RPG_Strategy.ComportamentosArmas;
 using Padroes_de_Projeto.SimUDuck;
 using Padroes_de_Projeto.SimUDuck.Comportamentos;
 using Padroes_de_Projeto.Strategy;
@@ -11,9 +13,15 @@ namespace Padroes_de_Projeto
     {
         static void Main(string[] args)
         {
-            if (true)
+            if (false)
             {
                 MainDuck();
+                return;
+            }
+
+            if (true)
+            {
+                RPG();
                 return;
             }
 
@@ -33,6 +41,35 @@ namespace Padroes_de_Projeto
             var templateMethod = new MainTemplateMethod();
             #endregion
 
+        }
+
+        private static void RPG()
+        {
+            Personagem rei = new Rei();
+            rei.Figth();
+            rei.SetComportamentoDeArma(new ComportamentoDeEspada());
+            rei.Figth();
+
+            Divisor();
+
+            Personagem rainha = new Rainha();
+            rainha.Figth();
+            rainha.SetComportamentoDeArma(new ComportamentoDeArcoFlecha());
+            rainha.Figth();
+
+            Divisor();
+
+            Personagem cavalheiro = new Cavalheiro();
+            cavalheiro.Figth();
+            cavalheiro.SetComportamentoDeArma(new ComportamentoMachado());
+            cavalheiro.Figth();
+
+            Divisor();
+
+            Personagem provocador = new Provocador();
+            provocador.Figth();
+            provocador.SetComportamentoDeArma(new ComportamentoDeFaca());
+            provocador.Figth();
         }
 
         private static void Divisor()
@@ -86,6 +123,11 @@ namespace Padroes_de_Projeto
             modeloDuck.PerformFly();
             modeloDuck.SetFlyBehavior(new FlyRocketPowered());
             modeloDuck.PerformFly();
+
+            Divisor();
+
+            var cacadorComDispositivo = new CacadorComDispositivo();
+            cacadorComDispositivo.Quack();
 
         }
     }
