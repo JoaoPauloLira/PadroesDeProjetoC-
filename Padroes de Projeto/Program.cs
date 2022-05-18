@@ -5,6 +5,7 @@ using Padroes_de_Projeto.SimUDuck;
 using Padroes_de_Projeto.SimUDuck.Comportamentos;
 using Padroes_de_Projeto.Strategy;
 using Padroes_de_Projeto.TemplateMethod;
+using Padroes_de_Projeto.WeatherData_Observer;
 using System;
 
 namespace Padroes_de_Projeto
@@ -19,9 +20,16 @@ namespace Padroes_de_Projeto
                 return;
             }
 
-            if (true)
+            if (false)
             {
                 RPG();
+                return;
+            }
+
+
+            if (true)
+            {
+                EstacaoMeteorologicaObserver();
                 return;
             }
 
@@ -40,6 +48,17 @@ namespace Padroes_de_Projeto
             #region TemplateMethod
             var templateMethod = new MainTemplateMethod();
             #endregion
+
+        }
+
+        private static void EstacaoMeteorologicaObserver()
+        {
+            var weatherData = new WeatherData();
+            var conditionsDisplay = new CurrentConditionsDisplay(weatherData);
+
+            weatherData.SetMeasurements(80, 65, 30.4f);
+            weatherData.SetMeasurements(82, 70, 29.2f);
+            weatherData.SetMeasurements(78, 90, 28.4f);
 
         }
 
