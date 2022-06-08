@@ -1,6 +1,8 @@
 ﻿using Padroes_de_Projeto.ChainOfResponsibility;
 using Padroes_de_Projeto.RPG_Strategy;
 using Padroes_de_Projeto.RPG_Strategy.ComportamentosArmas;
+using Padroes_de_Projeto.SimpleFactory;
+using Padroes_de_Projeto.SimpleFactory.Enum;
 using Padroes_de_Projeto.SimUDuck;
 using Padroes_de_Projeto.SimUDuck.Comportamentos;
 using Padroes_de_Projeto.StarBuzz_Decorate;
@@ -37,30 +39,31 @@ namespace Padroes_de_Projeto
             if (false)
             {
                 MainDuck();
-                return;
             }
 
             if (false)
             {
                 RPG();
-                return;
             }
 
             if (false)
             {
                 EstacaoMeteorologicaObserver();
-                return;
             }
 
             if (false)
             {
                 EstacaoMeteorologicaObserver();
-                return;
+            }
+
+            if (false)
+            {
+                StarBuzzDecorate();
             }
 
             if (true)
             {
-                StarBuzzDecorate();
+                PizzasSimpleFactory();
             }
         }
 
@@ -246,5 +249,48 @@ namespace Padroes_de_Projeto
             Imprimir($"{houseBlend.GetDescription()} R$ {houseBlend.Cost()}");
         }
 
+        private static void PizzasSimpleFactory()
+        {
+            int EscolherPizza(bool b, int i)
+            {
+                while (b)
+                {
+                    try
+                    {
+                        i = Convert.ToInt32(Console.ReadLine());
+                        if (i == 1 || i == 2)
+                            b = false;
+                        if (b)
+                            Console.WriteLine("Escolha incorreta");
+                    }
+                    catch (Exception)
+                    {
+                        Console.WriteLine("Escolha incorreta");
+                        Console.WriteLine("");
+                        Console.WriteLine("Informe a Pizza desejada:");
+                        Console.WriteLine("1 - Calabreza");
+                        Console.WriteLine("2 - Mussarela");
+                    }
+                }
+
+                return i;
+            }
+
+            Console.WriteLine("Informe a Pizza desejada:");
+            Console.WriteLine("1 - Calabreza");
+            Console.WriteLine("2 - Mussarela");
+            var escolha = 0;
+            var naoFoiEscolhida = true;
+
+            escolha = EscolherPizza(naoFoiEscolhida, escolha);
+
+            Pizza pizza = PizzaSimpleFactory.CriarPizza(ObtemTipoPizza.GeTipoPizza(escolha));
+
+            pizza.Preparar();
+            pizza.Assar(10);
+            pizza.Embalar();
+            Console.WriteLine("Pizza concluída, Obrigado pela preferência");
+
+        }
     }
 }
