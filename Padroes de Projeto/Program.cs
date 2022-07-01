@@ -1,7 +1,7 @@
 ﻿using Padroes_de_Projeto.ChainOfResponsibility;
+using Padroes_de_Projeto.FactoryMethod;
 using Padroes_de_Projeto.RPG_Strategy;
 using Padroes_de_Projeto.RPG_Strategy.ComportamentosArmas;
-using Padroes_de_Projeto.SimpleFactory;
 using Padroes_de_Projeto.SimpleFactory.Enum;
 using Padroes_de_Projeto.SimUDuck;
 using Padroes_de_Projeto.SimUDuck.Comportamentos;
@@ -14,6 +14,8 @@ using Padroes_de_Projeto.WeatherData_Observer;
 using System;
 using Imposto = Padroes_de_Projeto.Strategy.Imposto;
 using Orcamento = Padroes_de_Projeto.Strategy.Orcamento;
+using Pizza = Padroes_de_Projeto.SimpleFactory.Pizza;
+using PizzaSimpleFactory = Padroes_de_Projeto.FactoryMethod.Factorys.PizzaSimpleFactory;
 
 namespace Padroes_de_Projeto
 {
@@ -61,9 +63,14 @@ namespace Padroes_de_Projeto
                 StarBuzzDecorate();
             }
 
-            if (true)
+            if (false)
             {
                 PizzasSimpleFactory();
+            }
+
+            if (true)
+            {
+                PizzasFactoryMethodMain();
             }
         }
 
@@ -284,12 +291,39 @@ namespace Padroes_de_Projeto
 
             escolha = EscolherPizza(naoFoiEscolhida, escolha);
 
-            Pizza pizza = PizzaSimpleFactory.CriarPizza(ObtemTipoPizza.GeTipoPizza(escolha));
+            Pizza pizza = SimpleFactory.PizzaSimpleFactory.CriarPizza(ObtemTipoPizza.GeTipoPizza(escolha));
 
             pizza.Preparar();
             pizza.Assar(10);
             pizza.Embalar();
             Console.WriteLine("Pizza concluída, Obrigado pela preferência");
+
+        }
+
+        private static void PizzasFactoryMethodMain()
+        {
+
+            Console.WriteLine("Informe sua localização (S) para São Paulo ou (R) para Rio de Janeiro");
+            var localEscolhido = Console.ReadLine().ToUpper();
+
+            Console.WriteLine("Escolha a Pizza desejada: (M) para Mussarela ou (C) para Calabresa");
+            var pizzaEscolhida = Console.ReadLine().ToUpper();
+
+            try
+            {
+                PizzaFactoryMethod pizzaria = PizzaSimpleFactory.CriarPizzaria(localEscolhido);
+
+                var pizza = pizzaria.MontaPizza(pizzaEscolhida);
+
+                Console.WriteLine(pizza.Preparar());
+                Console.WriteLine("\nPizza concluida com sucesso");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Erro: " + e.Message);
+            }
+
+            Console.ReadLine();
 
         }
     }
